@@ -61,3 +61,20 @@
 
 1. ブランチを作成しよう  
 `git branch first-branch`  
+
+1. ブランチを切り替えよう
+`git checkout first-branch`
+
+1. first-branchブランチでファイルを編集してコミットしよう
+`git commit -am "自己紹介を編集しました"`
+
+1. masterブランチとの差分を確認しよう
+`git diff master`
+
+1. masterブランチでファイルを編集してコミットしよう
+`git commit -am "自己紹介を編集しました"`
+
+1. first-branchブランチをnon-fast-forwardでマージしよう
+`git merge filter-branch --no-ff`
+
+1. コンフリクトを解消しよう
