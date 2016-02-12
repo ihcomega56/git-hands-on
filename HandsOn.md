@@ -75,8 +75,25 @@
 `git commit -am "自己紹介を編集しました"`
 
 1. first-branchブランチをnon-fast-forwardでマージしよう
-`git merge filter-branch --no-ff`
+`git merge first-branch --no-ff`
 
 1. コンフリクトを解消しよう
 
-1.
+1. fast-forwardだとマージコミットが出来ないのを確認しよう
+`git checkout -b second-branch`
+`git checkout master`
+`git merge second-branch --ff`
+
+1. 直前のコミットを打ち消そう(打ち消しの記録を残す)
+`git log -1`
+`git revert xxx(打ち消す対象のコミット)`
+
+1. 直前のコミットを打ち消そう(完全に抹消する)
+`git reset --hard xxx(戻したい対象のコミット)`
+
+1. 消したものが残っているか確認してみよう
+`git reflog`
+
+1. reflogから前の状態に戻そう
+`git reset --hard xxx(戻したい対象のコミット)
+
