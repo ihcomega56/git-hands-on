@@ -95,5 +95,4 @@
 `git reflog`
 
 1. reflogから前の状態に戻そう
-`git reset --hard xxx(戻したい対象のコミット)
-
+`git reset --hard xxx(戻したい対象のコミット)`
