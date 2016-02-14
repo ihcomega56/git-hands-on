@@ -1,3 +1,7 @@
+# HandsOn  
+
+リポジトリを作って、コミット・プッシュしよう。  
+
 1. ローカルリポジトリを作ろう  
 `git init firstRepository`  
 
@@ -14,6 +18,10 @@
 
 1. リモートリポジトリにプッシュしよう  
 `git push origin master`  
+
+今度はコミットする前に編集した内容を破棄する操作をしよう。  
+    リポジトリはローカルで新たに作るのでなく、リモートからプルしてみよう。  
+    コミットの履歴(ログ)を見てみよう。  
 
 1. リモートリポジトリから新たなローカルリポジトリを作ろう  
 `git clone ***.git secondRepository`  
@@ -50,6 +58,8 @@
 1. リモートリポジトリにプッシュしよう  
 `git push origin master`  
 
+新しいブランチで作業し、元のブランチにマージしよう。  
+
 1. firstRepositoryに戻ろう  
 
 1. secondRepositoryの変更を反映しよう  
@@ -77,12 +87,16 @@
 1. first-branchブランチをnon-fast-forwardでマージしよう
 `git merge first-branch --no-ff`
 
-1. コンフリクトを解消しよう
-
 1. fast-forwardだとマージコミットが出来ないのを確認しよう
 `git checkout -b second-branch`
 `git checkout master`
 `git merge second-branch --ff`
+
+コンフリクトを解消しよう。  
+
+1. コンフリクトを解消しよう
+
+コミットを打ち消そう。  
 
 1. 直前のコミットを打ち消そう(打ち消しの記録を残す)
 `git log -1`
@@ -90,6 +104,8 @@
 
 1. 直前のコミットを打ち消そう(完全に抹消する)
 `git reset --hard xxx(戻したい対象のコミット)`
+
+reflogを活用しよう。
 
 1. 消したものが残っているか確認してみよう
 `git reflog`
