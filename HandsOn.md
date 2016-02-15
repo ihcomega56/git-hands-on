@@ -94,7 +94,14 @@
 
 コンフリクトを解消しよう。  
 
+1. コンフリクトを発生させよう
+`git checkout first-branch`
+`git checkout master`
+`git merge first-branch --no-ff`
+
 1. コンフリクトを解消しよう
+`git add self-introduction.txt`
+`git commit -m "コンフリクトを解消しました"`
 
 コミットを打ち消そう。  
 
