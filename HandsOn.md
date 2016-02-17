@@ -6,6 +6,7 @@
 `git init firstRepository`  
 
 1. ファイルを作ってステージに追加しよう  
+`vi self-introduction.txt`
 `git add self-introduction.txt`  
 
 1. ローカルリポジトリにコミットしよう  
@@ -27,12 +28,14 @@
 `git clone ***.git secondRepository`  
 
 1. ファイルを編集してステージに追加しよう  
+`vi self-introduction.txt`
 `git add self-introduction.txt`  
 
 1. ステータスを確認しよう  
 `git status`  
 
 1. まだコミットしていないファイルを再度編集しよう  
+`vi self-introduction.txt`
 
 1. ステータスを確認しよう  
 `git status`  
@@ -47,6 +50,7 @@
 `git status`  
 
 1. ファイルを編集してステージに追加しよう  
+`vi self-introduction.txt`
 `git add self-introduction.txt`  
 
 1. ローカルリポジトリにコミットしよう  
@@ -76,12 +80,14 @@
 `git checkout first-branch`
 
 1. first-branchブランチでファイルを編集してコミットしよう
+`vi self-introduction.txt`
 `git commit -am "自己紹介を編集しました"`
 
 1. masterブランチとの差分を確認しよう
 `git diff master`
 
 1. masterブランチでファイルを編集してコミットしよう
+`vi self-introduction.txt`
 `git commit -am "自己紹介を編集しました"`
 
 1. first-branchブランチをnon-fast-forwardでマージしよう
@@ -96,10 +102,13 @@
 
 1. コンフリクトを発生させよう
 `git checkout first-branch`
+`vi self-introduction.txt`
 `git checkout master`
+`vi self-introduction.txt`
 `git merge first-branch --no-ff`
 
 1. コンフリクトを解消しよう
+`vi self-introduction.txt`
 `git add self-introduction.txt`
 `git commit -m "コンフリクトを解消しました"`
 
