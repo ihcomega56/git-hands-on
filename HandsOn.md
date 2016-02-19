@@ -67,7 +67,7 @@
 
 1. secondRepositoryの変更を反映しよう  
 `git fetch origin`
-`git merge ~~~`
+`git merge FETCH_HEAD`
 
 1. ログを確認しよう  
 `git log`  
