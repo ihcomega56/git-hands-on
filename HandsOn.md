@@ -57,6 +57,7 @@
 
 1. ログを確認しよう  
 `git log`  
+    ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)
 
 1. リモートリポジトリにプッシュしよう  
 `git push origin master`  
@@ -83,7 +84,8 @@
 `git commit -am "自己紹介を編集しました"`
 
 1. masterブランチとの差分を確認しよう
-`git diff master`
+`git diff master`  
+    差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)
 
 1. masterブランチでファイルを編集してコミットしよう
 `vi self-introduction.txt`
