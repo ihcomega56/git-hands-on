@@ -6,7 +6,7 @@
 `git init firstRepository`  
 
 1. ファイルを作ってステージに追加しよう  
-`vi self-introduction.txt`
+`vi self-introduction.txt`  
 `git add self-introduction.txt`  
 
 1. ローカルリポジトリにコミットしよう  
@@ -27,14 +27,14 @@
 `git clone ***.git secondRepository`  
 
 1. ファイルを編集してステージに追加しよう  
-`vi self-introduction.txt`
+`vi self-introduction.txt`  
 `git add self-introduction.txt`  
 
 1. ステータスを確認しよう  
 `git status`  
 
 1. まだコミットしていないファイルを再度編集しよう  
-`vi self-introduction.txt`
+`vi self-introduction.txt`  
 
 1. ステータスを確認しよう  
 `git status`  
@@ -43,13 +43,13 @@
 `git checkout -- self-introduction.txt`  
 
 1. ファイルをアンステージしよう  
-`git reset self-introduction.txt`        
+`git reset self-introduction.txt`  
 
 1. ステータスを確認しよう  
 `git status`  
 
 1. ファイルを編集してステージに追加しよう  
-`vi self-introduction.txt`
+`vi self-introduction.txt`  
 `git add self-introduction.txt`  
 
 1. ローカルリポジトリにコミットしよう  
@@ -57,7 +57,7 @@
 
 1. ログを確認しよう  
 `git log`  
-    ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)
+    ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)  
 
 1. リモートリポジトリにプッシュしよう  
 `git push origin master`  
@@ -67,8 +67,8 @@
 1. firstRepositoryに戻ろう  
 
 1. secondRepositoryの変更を反映しよう  
-`git fetch origin`
-`git merge FETCH_HEAD`
+`git fetch origin`  
+`git merge FETCH_HEAD`  
 
 1. ログを確認しよう  
 `git log`  
@@ -76,56 +76,56 @@
 1. ブランチを作成しよう  
 `git branch first-branch`  
 
-1. ブランチを切り替えよう
-`git checkout first-branch`
+1. ブランチを切り替えよう  
+`git checkout first-branch`  
 
-1. first-branchブランチでファイルを編集してコミットしよう
-`vi self-introduction.txt`
-`git commit -am "自己紹介を編集しました"`
+1. first-branchブランチでファイルを編集してコミットしよう  
+`vi self-introduction.txt`  
+`git commit -am "自己紹介を編集しました"`  
 
-1. masterブランチとの差分を確認しよう
+1. masterブランチとの差分を確認しよう  
 `git diff master`  
-    差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)
+    差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)  
 
-1. masterブランチでファイルを編集してコミットしよう
-`vi self-introduction.txt`
-`git commit -am "自己紹介を編集しました"`
+1. masterブランチでファイルを編集してコミットしよう  
+`vi self-introduction.txt`  
+`git commit -am "自己紹介を編集しました"`  
 
-1. first-branchブランチをnon-fast-forwardでマージしよう
-`git merge first-branch --no-ff`
+1. first-branchブランチをnon-fast-forwardでマージしよう  
+`git merge first-branch --no-ff`  
 
-1. fast-forwardだとマージコミットが出来ないのを確認しよう
-`git checkout -b second-branch`
-`git checkout master`
-`git merge second-branch --ff`
+1. fast-forwardだとマージコミットが出来ないのを確認しよう  
+`git checkout -b second-branch`  
+`git checkout master`  
+`git merge second-branch --ff`  
 
 コンフリクトを解消しよう。  
 
-1. コンフリクトを発生させよう
-`git checkout first-branch`
-`vi self-introduction.txt`
-`git checkout master`
-`vi self-introduction.txt`
-`git merge first-branch --no-ff`
+1. コンフリクトを発生させよう  
+`git checkout first-branch`  
+`vi self-introduction.txt`  
+`git checkout master`  
+`vi self-introduction.txt`  
+`git merge first-branch --no-ff`  
 
-1. コンフリクトを解消しよう
-`vi self-introduction.txt`
-`git add self-introduction.txt`
-`git commit -m "コンフリクトを解消しました"`
+1. コンフリクトを解消しよう  
+`vi self-introduction.txt`  
+`git add self-introduction.txt`  
+`git commit -m "コンフリクトを解消しました"`  
 
 コミットを打ち消そう。  
 
-1. 直前のコミットを打ち消そう(打ち消しの記録を残す)
-`git log -1`
-`git revert xxx(打ち消す対象のコミット)`
+1. 直前のコミットを打ち消そう(打ち消しの記録を残す)  
+`git log -1`  
+`git revert xxx(打ち消す対象のコミット)`  
 
-1. 直前のコミットを打ち消そう(完全に抹消する)
-`git reset --hard xxx(戻したい対象のコミット)`
+1. 直前のコミットを打ち消そう(完全に抹消する)  
+`git reset --hard xxx(戻したい対象のコミット)`  
 
-reflogを活用しよう。
+reflogを活用しよう。  
 
-1. 消したものが残っているか確認してみよう
-`git reflog`
+1. 消したものが残っているか確認してみよう  
+`git reflog`  
 
-1. reflogから前の状態に戻そう
-`git reset --hard xxx(戻したい対象のコミット)`
+1. reflogから前の状態に戻そう  
+`git reset --hard xxx(戻したい対象のコミット)`  
