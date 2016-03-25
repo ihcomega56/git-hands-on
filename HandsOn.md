@@ -3,7 +3,7 @@
 **リポジトリを作って、コミット・プッシュしよう。**  
 
 1. ローカルリポジトリを作ろう  
-`git init firstRepository`  
+`git init FirstRepository`  
 
 1. ファイルを作ってステージに追加しよう  
 `vi self-introduction.txt`  
@@ -24,7 +24,7 @@
 **コミットの履歴(ログ)を見てみよう。**  
 
 1. リモートリポジトリから新たなローカルリポジトリを作ろう  
-`git clone ***.git secondRepository`  
+`git clone ***.git SecondRepository`  
 
 1. ファイルを編集してステージに追加しよう  
 `vi self-introduction.txt`  
@@ -64,9 +64,9 @@
 
 **新しいブランチで作業し、元のブランチにマージしよう。**  
 
-1. firstRepositoryに戻ろう  
+1. FirstRepositoryに戻ろう  
 
-1. secondRepositoryの変更を反映しよう  
+1. SecondRepositoryの変更を反映しよう  
 `git fetch origin`  
 `git merge FETCH_HEAD`  
 
