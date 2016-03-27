@@ -20,7 +20,7 @@
     1. `vi self-introduction.txt`  
     `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
     1. `git add self-introduction.txt`  
-    ファイルをステージにのせる  
+    編集した内容をステージする  
 
 1. ローカルリポジトリにコミットしよう  
     1. `git commit -m "Initial commit"`  
@@ -157,20 +157,38 @@
 
 1. ログを確認しよう  
     1. `git log`  
+    
+**リベースしてみよう。**  
+
+1. リベースで`master`ブランチの変更を`first-branch`ブランチに取り込もう  
+    1. `git checkout first-branch`  
+    `first-branch`ブランチに切り替える  
+    1. `git rebase master`  
+    `master`ブランチの変更をリベースにより取り込む  
+
+1. ログを確認しよう  
+    1. `git log`  
 
 **コンフリクトを解消しよう。**  
 
 1. コンフリクトを発生させよう  
-`git checkout first-branch`  
-`vi self-introduction.txt`  
-`git checkout master`  
-`vi self-introduction.txt`  
-`git merge first-branch --no-ff`  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git checkout master`  
+    `master`ブランチに切り替える  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git merge first-branch --no-ff`  
+    `--no-ff`オプションをつけてマージする  
+    CONFLICTの文字が現れるはず・・・！  
 
 1. コンフリクトを解消しよう  
-`vi self-introduction.txt`  
-`git add self-introduction.txt`  
-`git commit -m "コンフリクトを解消しました"`  
+    1. `vi self-introduction.txt`  
+    残す内容、消す内容を判断して編集し、🐟の骨(`<<<<<<<`と`=======`と`>>>>>>>`)をなくす  
+    1. `git add self-introduction.txt`  
+    納得行く内容になったらステージする  
+    1. `git commit -m "コンフリクトを解消しました"`  
+    コミットする  
 
 **コミットを打ち消そう。**  
 
