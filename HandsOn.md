@@ -3,70 +3,102 @@
 **リポジトリを作って、コミット・プッシュしよう。**  
 
 1. ローカルリポジトリを作ろう  
-`git init FirstRepository`  
+    1. `mkdir javajo-hands-on`  
+    `javajo-hands-on`というディレクトリを作る  
+    1. `cd javajo-hands-on`  
+    作った`javajo-hands-on`に移動する  
+    1. `git init`  
+    リポジトリを作り`javajo-hands-on`をGitで管理出来るようにする  
+
+1. .gitディレクトリが出来ているのを確認しよう  
+    1. `ls -la`  
+    `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
 
 1. ファイルを作ってステージに追加しよう  
-`vi self-introduction.txt`  
-`git add self-introduction.txt`  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
+    1. `git add self-introduction.txt`  
+    ファイルをステージにのせる  
 
 1. ローカルリポジトリにコミットしよう  
-`git commit -m "Initial commit"`  
+    1. `git commit -m "Initial commit"`  
+    最初のコミットコメントは`Initial commit`とか`First commit`とすることが多いよ  
 
 1. GitHubにリモートリポジトリを作ろう  
+    [スクショ〜]  
 
 1. 作成したリモートリポジトリをローカルで追加しよう  
-`git add origin ***.git`  
+    1. `git add origin https://github.com/XXXXXX/javajo-hands-on.git`  
+    [スクショ〜]  
 
 1. リモートリポジトリにプッシュしよう  
-`git push origin master`  
+    1. `git push origin master`  
+    GitHubのユーザネーム、パスワードを入力する必要があるよ  
 
 **コミットする前に編集した内容を破棄する操作をしよう。**  
 **コミットの履歴(ログ)を見てみよう。**  
 
 1. リモートリポジトリから新たなローカルリポジトリを作ろう  
-`git clone ***.git SecondRepository`  
+    1. `cd ..`
+    1つ上の階層に戻る  
+    1. `git clone https://github.com/XXXXXX/javajo-hands-on.git javajo-second`  
+    今度は、既に存在するリポジトリをローカルにコピーし、`javajo-second`という名前をつける  
 
 1. ファイルを編集してステージに追加しよう  
-`vi self-introduction.txt`  
-`git add self-introduction.txt`  
+    1. `cd javajo-second`
+    `javajo-second`に移動する  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`を開くと最初に作ったリポジトリでの編集内容を確認できる  
+    名前の下に、自己紹介を付け足して保存する  
+    1. `git add self-introduction.txt`  
+    ファイルをステージにのせる  
 
 1. ステータスを確認しよう  
-`git status`  
+    1. `git status`  
+    `self-introduction.txt`が`modified`となりステージされているはず！  
 
 1. まだコミットしていないファイルを再度編集しよう  
-`vi self-introduction.txt`  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に間違った自己紹介を付け足して保存する  
 
 1. ステータスを確認しよう  
-`git status`  
+    1. `git status`  
+    ステージされている変更と、されていない変更が表示されているはず！  
 
 1. ファイルの編集を破棄しよう  
-`git checkout -- self-introduction.txt`  
+    1. `git checkout -- self-introduction.txt`  
+    ステージされていない編集を破棄する  
+    よく見ると操作方法が説明されているよ！  
+    1. `vi self-introduction.txt`
+    間違った自己紹介が消えているはず！  
 
 1. ファイルをアンステージしよう  
-`git reset self-introduction.txt`  
+    1. `git reset self-introduction.txt`  
+    よく見ると操作方法が説明されているよ！  
 
 1. ステータスを確認しよう  
-`git status`  
+    1. `git status`  
+    変更がアンステージされているはず！  
 
-1. ファイルを編集してステージに追加しよう  
-`vi self-introduction.txt`  
-`git add self-introduction.txt`  
+1. ステージに追加しよう  
+    1. `git add self-introduction.txt`  
 
 1. ローカルリポジトリにコミットしよう  
-`git commit -m "自己紹介を編集しました"`  
+    1. `git commit -m "XXXを追記しました"`  
+    変更内容をコミットコメントとして残そう  
 
 1. ログを確認しよう  
-`git log`  
+    1. `git log`  
     ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)  
 
 1. リモートリポジトリにプッシュしよう  
-`git push origin master`  
+    1. `git push origin master`  
 
 **新しいブランチで作業し、元のブランチにマージしよう。**  
 
-1. FirstRepositoryに戻ろう  
+1. javajo-hands-onに戻ろう  
 
-1. SecondRepositoryの変更を反映しよう  
+1. javajo-secondの変更を反映しよう  
 `git fetch origin`  
 `git merge FETCH_HEAD`  
 
