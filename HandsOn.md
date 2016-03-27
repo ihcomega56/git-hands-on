@@ -97,39 +97,64 @@
 **新しいブランチで作業し、元のブランチにマージしよう。**  
 
 1. javajo-hands-onに戻ろう  
+    1. `cd ../javajo-hands-on`  
 
 1. javajo-secondの変更を反映しよう  
-`git fetch origin`  
-`git merge FETCH_HEAD`  
+    1. `git fetch origin`  
+    originの変更を取得する  
+    1. `git merge origin/master`  
+    ワークツリーに変更を反映させる  
 
 1. ログを確認しよう  
-`git log`  
+    1. `git log`  
 
 1. ブランチを作成しよう  
-`git branch first-branch`  
+    1. `git branch first-branch`  
+    `first-branch`ブランチを作成する  
 
 1. ブランチを切り替えよう  
-`git checkout first-branch`  
+    1. `git checkout first-branch`  
+    作業する場所を`master`ブランチから`first-branch`ブランチに切り替える  
+    1. `git branch`  
+    現在のブランチが`first-branch`になっていることを確認する  
 
 1. first-branchブランチでファイルを編集してコミットしよう  
-`vi self-introduction.txt`  
-`git commit -am "自己紹介を編集しました"`  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git commit -am "XXXを追記しました"`  
+    `-a`オプションを追加することで変更をすべてステージしてコミットできるよ！  
 
 1. masterブランチとの差分を確認しよう  
-`git diff master`  
+    1. `git diff master`  
+    ローカルの`master`ブランチと比較する  
+    1. `git diff origin/master`  
+    リモートの`master`ブランチと比較する  
     差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)  
 
-1. masterブランチでファイルを編集してコミットしよう  
-`vi self-introduction.txt`  
-`git commit -am "自己紹介を編集しました"`  
+1. first-branchブランチをnon-fast-forwardでmasterブランチにマージしよう  
+    1. `git checkout master`  
+    `master`ブランチに切り替える  
+    1. `git merge first-branch --no-ff`  
+    `--no-ff`オプションをつけてマージする  
+    viエディタが立ち上がってマージコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
 
-1. first-branchブランチをnon-fast-forwardでマージしよう  
-`git merge first-branch --no-ff`  
+1. ログを確認しよう  
+    1. `git log`  
 
 1. fast-forwardだとマージコミットが出来ないのを確認しよう  
-`git checkout -b second-branch`  
-`git checkout master`  
-`git merge second-branch --ff`  
+    1. `git checkout -b second-branch`  
+    `-b`オプションをつけてチェックアウトすることで`second-branch`を作成すると同時に切り替えられるよ！  
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git commit -am "XXXを追記しました"`  
+    変更をすべてステージしてコミットする  
+    1. `git checkout master`  
+    `master`ブランチに切り替える  
+    1. `git merge second-branch --ff`  
+    `--ff`オプションをつけてマージする  
+
+1. ログを確認しよう  
+    1. `git log`  
 
 **コンフリクトを解消しよう。**  
 
