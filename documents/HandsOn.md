@@ -27,14 +27,14 @@
     最初のコミットコメントは`Initial commit`とか`First commit`とすることが多いよ  
 
 1. GitHubにリモートリポジトリを作ろう  
-    ![github-top](images/github-top.png)  
+    ![github-top](../images/github-top.png)  
     右上のメニューから`New repository`を選択してね  
-    ![github-top](images/create-new-repository.png)  
+    ![create-new-repository](../images/create-new-repository.png)  
     `Repository name`にリポジトリ名をいれてね (今回は`javajo-hands-on`)  
 
 1. 作成したリモートリポジトリをローカルで追加しよう  
     1. `git add origin https://github.com/XXXXXX/javajo-hands-on.git`  
-    ![github-top](images/https.png)  
+    ![https](../images/https.png)  
     リポジトリが空の場合、URLはここでコピーできるよ  
 
 1. リモートリポジトリにプッシュしよう  
