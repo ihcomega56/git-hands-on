@@ -226,4 +226,35 @@
     1. `git reset --hard xxx(戻したい対象のコミット)`  
     さっきリセットした状態に戻すことだって出来るよ！  
 
+---
+
 ## みんなでわいわいやってみよう編  
+
+**かるた風に`あ`から`わ`まで皆のエピソードや思いなど(技術に関するもの)を集めてみよう**  
+サンプルはこちら : [karuta-fu](https://github.com/ihcomega56/karuta-fu)  
+
+### ルール ※箇条書きは例
+
+1. 最大9人のチームを作る
+1. チーム毎に1人1行の担当決めをする
+    * Aさんは「あ行」担当
+    * Bさんは「か行」担当
+    * Cさんは「や行」と「わ行」担当
+1. 各メンバー、行ごとのブランチを作る  
+    * `git checkout -b a-gyo`
+    * `git checkout -b ka-gyo`
+1. 各ブランチで5文字分ファイルを作り、好きにネタを書く(内容は重要でないので何でもOK)
+    * `vi あ.txt` : `曖昧な理解が生んだバグ祭り`
+    * `vi い.txt` : `いつも楽しいJava女子部勉強会`
+    * `vi う.txt` : `胡散臭いセミナーに要注意`
+    * `vi え.txt` : `エンジニアというおれの天職`
+    * `vi お.txt` : `覚えられない正規表現`
+1. 1文字1(以上)コミット単位でコミットしていく
+    * `git add あ.txt` -> `git commit -m "「あ」をコミットしました`
+    * `git add い.txt` -> `git commit -m "「い」をコミットしました`
+1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
+    * `git checkout master` -> `git pull origin master`
+    * [入っていた場合] `git checkout a-gyo` -> `git rebase master`
+1. 行ブランチを`master`にマージし、プッシュする
+    * `git checkout master` -> `git merge a-gyo --no-ff` -> `git push origin master`
+1. 全員が終わったら自由に作業する(他の人の作品を編集してみたり、同じファイルをいじってコンフリクトを起こしてみたり…)
