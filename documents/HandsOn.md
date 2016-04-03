@@ -45,13 +45,13 @@
 **コミットの履歴(ログ)を見てみよう。**  
 
 1. リモートリポジトリから新たなローカルリポジトリを作ろう  
-    1. `cd ..`
+    1. `cd ..`  
     1つ上の階層に戻る  
     1. `git clone https://github.com/XXXXXX/javajo-hands-on.git javajo-second`  
     今度は、既に存在するリポジトリをローカルにコピーし、`javajo-second`という名前をつける  
 
 1. ファイルを編集してステージに追加しよう  
-    1. `cd javajo-second`
+    1. `cd javajo-second`  
     `javajo-second`に移動する  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`を開くと最初に作ったリポジトリでの編集内容を確認できる  
@@ -75,7 +75,7 @@
     1. `git checkout -- self-introduction.txt`  
     ステージされていない編集を破棄する  
     よく見ると操作方法が説明されているよ！  
-    1. `vi self-introduction.txt`
+    1. `vi self-introduction.txt`  
     間違った自己紹介が消えているはず！  
 
 1. ファイルをアンステージしよう  
