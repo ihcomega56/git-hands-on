@@ -1,12 +1,30 @@
 #  HandsOn
 
+## 後々の準備
+- [karuta-fu](https://github.com/javajok/karuta-fu)  にみんなにスターをつけてもらう
+    - いくつか用意して、島ごとにリポジトリをわける
+- 参加者全員をコラボレータにいれる
+
 ## ひとりでもくもくやってみよう編  
 
 **リポジトリを作って、コミット・プッシュしよう。**  
 
+1. 準備
+    1. `git config`
+        - メールアドレスとユーザ名を設定してもらう
+
+1. ハンズオンのテキストをcloneしてもらう
+
 1. ローカルリポジトリを作ろう  
     1. `mkdir javajo-hands-on`  
     `javajo-hands-on`というディレクトリを作る  
+        - Windowsの場合
+          - gitBashをつかってもらう
+          - ユーザディレクトリ直下(gitBash起動時のデフォルト)で作業してもらう
+          - `start .` でエクスプローラを開いてもらう
+        - Macの場合
+          - `open .` でFinderひらける
+
     1. `cd javajo-hands-on`  
     作った`javajo-hands-on`に移動する  
     1. `git init`  
@@ -15,16 +33,31 @@
 1. .gitディレクトリが出来ているのを確認しよう  
     1. `ls -la`  
     `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
+        - 隠しファイルを表示しておいてもらわないと `.git` が表示されない
 
 1. ファイルを作ってステージに追加しよう  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
+        - 作り方はなんでもいい。メモ帳でつくってもらってもOK。
+
+    1. `git status`
+      - Untracked files: にファイル名が表示されていることを確認してもらう
+
     1. `git add self-introduction.txt`  
     編集した内容をステージする  
+
+    1. `git status`
+      - ステージングされたことを確認してもらう
 
 1. ローカルリポジトリにコミットしよう  
     1. `git commit -m "Initial commit"`  
     最初のコミットコメントは`Initial commit`とか`First commit`とすることが多いよ  
+
+    1. ログの確認
+      - `git log`
+      - `git status`
+      - `gitk`
+          - gitkはもうずっとたちあげといてもらう
 
 1. GitHubにリモートリポジトリを作ろう  
     ![github-top](../images/github-top.png)  
@@ -33,26 +66,22 @@
     `Repository name`にリポジトリ名をいれてね (今回は`javajo-hands-on`)  
 
 1. 作成したリモートリポジトリをローカルで追加しよう  
-    1. `git add origin https://github.com/XXXXXX/javajo-hands-on.git`  
+    1. `git remote add origin https://github.com/XXXXXX/javajo-hands-on.git`  
     ![https](../images/https.png)  
     リポジトリが空の場合、URLはここでコピーできるよ  
 
+      - Githubの `…or push an existing repository from the command line` をコピペしてもらう
+
 1. リモートリポジトリにプッシュしよう  
-    1. `git push origin master`  
+    1. `git push -u origin master`  
     GitHubのユーザネーム、パスワードを入力する必要があるよ  
+
+    - Githubの `…or push an existing repository from the command line` をコピペしてもらう
 
 **コミットする前に編集した内容を破棄する操作をしよう。**  
 **コミットの履歴(ログ)を見てみよう。**  
 
-1. リモートリポジトリから新たなローカルリポジトリを作ろう  
-    1. `cd ..`
-    1つ上の階層に戻る  
-    1. `git clone https://github.com/XXXXXX/javajo-hands-on.git javajo-second`  
-    今度は、既に存在するリポジトリをローカルにコピーし、`javajo-second`という名前をつける  
-
 1. ファイルを編集してステージに追加しよう  
-    1. `cd javajo-second`
-    `javajo-second`に移動する  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`を開くと最初に作ったリポジトリでの編集内容を確認できる  
     名前の下に、自己紹介を付け足して保存する  
@@ -71,6 +100,10 @@
     1. `git status`  
     ステージされている変更と、されていない変更が表示されているはず！  
 
+1. `add`
+    - `add` した後にまたステータス確認してもらう
+
+<!--
 1. ファイルの編集を破棄しよう  
     1. `git checkout -- self-introduction.txt`  
     ステージされていない編集を破棄する  
@@ -85,6 +118,8 @@
 1. ステータスを確認しよう  
     1. `git status`  
     変更がアンステージされているはず！  
+
+-->
 
 1. ステージに追加しよう  
     1. `git add self-introduction.txt`  
@@ -101,6 +136,7 @@
     1. `git push origin master`  
 
 **新しいブランチで作業し、元のブランチにマージしよう。**  
+<!--
 
 1. javajo-hands-onに戻ろう  
     1. `cd ../javajo-hands-on`  
@@ -113,10 +149,13 @@
 
 1. ログを確認しよう  
     1. `git log`  
+-->
 
 1. ブランチを作成しよう  
+    - 最初に、 `git branch` をたたいて、masterしかないことを確認してもらう
     1. `git branch first-branch`  
     `first-branch`ブランチを作成する  
+      - `git branch` をたたいて `first-branch` ブランチができていることを確認してもらう
 
 1. ブランチを切り替えよう  
     1. `git checkout first-branch`  
@@ -129,6 +168,7 @@
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
     `-a`オプションを追加することで変更をすべてステージしてコミットできるよ！  
+      - コミットできていることを `log` で確認してもらう
 
 1. masterブランチとの差分を確認しよう  
     1. `git diff master`  
@@ -161,7 +201,7 @@
 
 1. ログを確認しよう  
     1. `git log`  
-    
+
 **リベースしてみよう。**  
 
 1. リベースで`master`ブランチの変更を`first-branch`ブランチに取り込もう  
@@ -178,6 +218,7 @@
 1. コンフリクトを発生させよう  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. コミット
     1. `git checkout master`  
     `master`ブランチに切り替える  
     1. `vi self-introduction.txt`  
@@ -194,6 +235,14 @@
     1. `git commit -m "コンフリクトを解消しました"`  
     コミットする  
 
+1. ブランチをPushしてみる
+    1. Githubのブランチ一覧を確認してもらう
+        - All branchesを見てもらう
+        - masterだけ
+    1. `git push origin first-branch`
+    1. Githubのブランチ一覧を確認してもらう
+        - first-branchができるはず
+
 **コミットを打ち消そう。**  
 
 1. 直前のコミットを打ち消そう(打ち消しの記録を残す)  
@@ -209,14 +258,19 @@
 1. ログを確認しよう  
     1. `git log`
 
+1. diffを確認しよう
+    1. `git diff @~` と gitkをリロード
+
 1. 直前のコミットを打ち消そう(完全に抹消する)  
     1. `git log -3`
     1. `git reset --hard xxx(戻したい対象のコミット)`  
     引数で渡したコミットより後のコミットが全て打ち消されるよ！  
-    
+
 1. ログを確認しよう  
     1. `git log`
 
+
+<!--
 **reflogを活用しよう。**  
 
 1. 消したものが残っているか確認してみよう  
@@ -225,13 +279,15 @@
 1. reflogから前の状態に戻そう  
     1. `git reset --hard xxx(戻したい対象のコミット)`  
     さっきリセットした状態に戻すことだって出来るよ！  
+-->
 
 ---
 
 ## みんなでわいわいやってみよう編  
 
 **かるた風に`あ`から`わ`まで皆のエピソードや思いなど(技術に関するもの)を集めてみよう**  
-サンプルはこちら : [karuta-fu](https://github.com/ihcomega56/karuta-fu)  
+サンプルはこちら : [karuta-fu](https://github.com/javajok/karuta-fu)  
+
 
 ### ルール ※箇条書きは例
 
@@ -249,7 +305,13 @@
     * `vi う.txt` : `胡散臭いセミナーに要注意`
     * `vi え.txt` : `エンジニアというおれの天職`
     * `vi お.txt` : `覚えられない正規表現`
+    - 複数ファイルコミットをやってみせる
+    - よこなちゃんが前で1つのリポジトリに `push` スタッフがその変更を `pull` して、他リポジトリにも `push`
+
+1. よこなちゃんの変更を `pull` してもらう。
+
 1. 1文字1(以上)コミット単位でコミットしていく
+    - 1ファイル1コミット単位じゃなくても、好きにコミットしてもらう
     * `git add あ.txt` -> `git commit -m "「あ」をコミットしました`
     * `git add い.txt` -> `git commit -m "「い」をコミットしました`
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
