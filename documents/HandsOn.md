@@ -33,7 +33,7 @@
     `Repository name`にリポジトリ名をいれてね (今回は`javajo-hands-on`)  
 
 1. 作成したリモートリポジトリをローカルで追加しよう  
-    1. `git add origin https://github.com/XXXXXX/javajo-hands-on.git`  
+    1. `git remote add origin https://github.com/XXXXXX/javajo-hands-on.git`  
     ![https](../images/https.png)  
     リポジトリが空の場合、URLはここでコピーできるよ  
 
