@@ -182,6 +182,8 @@
     `master`ブランチに切り替える  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git commit -am "XXXを追記しました"`
+    コミットする
     1. `git merge first-branch --no-ff`  
     `--no-ff`オプションをつけてマージする  
     CONFLICTの文字が現れるはず・・・！  
