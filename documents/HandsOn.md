@@ -188,7 +188,7 @@
 ## みんなでわいわいやってみよう編  
 
 **かるた風に`あ`から`わ`まで皆のエピソードや思いなど(技術に関するもの)を集めてみよう**  
-サンプルはこちら : [karuta-fu](https://github.com/ihcomega56/karuta-fu)  
+サンプルはこちら : [karuta-fu](https://github.com/javajok/karuta-fu)  
 
 ### ルール ※箇条書きは例
 
@@ -201,14 +201,14 @@
     * `git checkout -b a-gyo`
     * `git checkout -b ka-gyo`
 1. 各ブランチで5文字分ファイルを作り、好きにネタを書く(内容は重要でないので何でもOK)
-    * `vi あ.txt` : `曖昧な理解が生んだバグ祭り`
-    * `vi い.txt` : `いつも楽しいJava女子部勉強会`
-    * `vi う.txt` : `胡散臭いセミナーに要注意`
-    * `vi え.txt` : `エンジニアというおれの天職`
-    * `vi お.txt` : `覚えられない正規表現`
-1. 1文字1(以上)コミット単位でコミットしていく
-    * `git add あ.txt` -> `git commit -m "「あ」をコミットしました`
-    * `git add い.txt` -> `git commit -m "「い」をコミットしました`
+    * `vi a.txt` : `曖昧な理解が生んだバグ祭り`
+    * `vi i.txt` : `いつも楽しいJava女子部勉強会`
+    * `vi u.txt` : `胡散臭いセミナーに要注意`
+    * `vi e.txt` : `エンジニアというおれの天職`
+    * `vi o.txt` : `覚えられない正規表現`
+1. コミットしていく
+    * `git add a.txt` -> `git commit -m "「あ」をコミットしました`
+    * `git add --all -> `git commit -m "「い」「う」をコミットしました`
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
     * `git checkout master` -> `git pull origin master`
     * [入っていた場合] `git checkout a-gyo` -> `git rebase master`
