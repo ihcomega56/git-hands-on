@@ -36,20 +36,30 @@
     リポジトリを作り`javajo-hands-on`をGitで管理出来るようにする  
 
 1. .gitディレクトリが出来ているのを確認しよう  
-    * `ls -la`  
+    1. `ls -la`  
     `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
-    * Windows: `start .` / Mac: `open .git`  
+    1. Windows: `start .` / Mac: `open .git`  
     エクスプローラ/Finderで表示も可能だよ！  
 
 1. ファイルを作ってステージに追加しよう  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
+    1. `git status`  
+    ステージの状況を確認する  
     1. `git add self-introduction.txt`  
     編集した内容をステージする  
+    1. `git status`  
+    ステージの状況を確認する  
 
 1. ローカルリポジトリにコミットしよう  
     1. `git commit -m "Initial commit"`  
     最初のコミットコメントは`Initial commit`とか`First commit`とすることが多いよ  
+    1. `git status`  
+    ステージの状況を確認する  
+
+1. ログを確認しよう(gitkも確認しよう)  
+    1. `git log`  
+    ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)  
 
 1. GitHubにリモートリポジトリを作ろう  
     ![github-top](../images/github-top.png)  
@@ -60,7 +70,7 @@
 1. 作成したリモートリポジトリをローカルで追加しよう  
     1. `git remote add origin https://github.com/XXXXXX/javajo-hands-on.git`  
     ![https](../images/https.png)  
-    リポジトリが空の場合、URLはここでコピーできるよ  
+    コマンドをここでコピーできるよ  
 
 1. リモートリポジトリにプッシュしよう  
     1. `git push origin master`  
@@ -68,21 +78,15 @@
 
 **新しいブランチで作業し、元のブランチにマージしよう。**  
 
-1. javajo-hands-onに戻ろう  
-    1. `cd ../javajo-hands-on`  
-
-1. javajo-secondの変更を反映しよう  
-    1. `git fetch origin`  
-    originの変更を取得する  
-    1. `git merge origin/master`  
-    ワークツリーに変更を反映させる  
-
-1. ログを確認しよう  
-    1. `git log`  
+1. 今あるブランチを確認しよう  
+    1. `git branch`  
+    `master`しかないことを確認する  
 
 1. ブランチを作成しよう  
     1. `git branch first-branch`  
     `first-branch`ブランチを作成する  
+    1. `git branch`  
+    `master`と`first-branch`があるが、今は`master`ブランチにいることを確認する  
 
 1. ブランチを切り替えよう  
     1. `git checkout first-branch`  
@@ -95,6 +99,9 @@
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
     `-a`オプションを追加することで変更をすべてステージしてコミットできるよ！  
+
+1. ログを確認しよう  
+    1. `git log`  
 
 1. masterブランチとの差分を確認しよう  
     1. `git diff master`  
@@ -140,8 +147,15 @@
     1. `git log`  
 
 **ブランチをプッシュしてみよう。**
+
+1. GitHub上にあるブランチを確認しよう  
+    `master`しかないことを確認する  
+
 1. `first-branch`ブランチをプッシュしよう
     1. `git push origin first-branch`  
+
+1. GitHub上にあるブランチを確認しよう  
+    `master`と`first-branch`があることを確認する  
 
 **コンフリクトを解消しよう。**  
 
@@ -179,7 +193,11 @@
     リバートコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
 
 1. ログを確認しよう  
-    1. `git log`
+    1. `git log`  
+
+1. 直前のコミットとの差分を確認しよう  
+    1. `git diff @~`  
+    1. gitkをリロード  
 
 1. 直前のコミットを打ち消そう(完全に抹消する)  
     1. `git log -3`
@@ -216,7 +234,7 @@
     * `git add a.txt` -> `git commit -m "「あ」をコミットしました`
     * `git add --all -> `git commit -m "「い」「う」をコミットしました`
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
-    * `git checkout master` -> `git pull origin master`
+    * `git checkout master` -> `git fetch` -> `git merge origin/master`
     * [入っていた場合] `git checkout a-gyo` -> `git rebase master`
 1. 行ブランチを`master`にマージし、プッシュする
     * `git checkout master` -> `git merge a-gyo --no-ff` -> `git push origin master`
