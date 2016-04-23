@@ -10,6 +10,9 @@
 1. メールアドレスを設定しよう  
     1. `git config --global user.email "adoresu@adoresu.com"`  
 
+1. gitkのエンコーディングを設定しよう
+    1. `git config --global gui.encoding utf8`
+
 **リポジトリをクローンしよう。**  
 
 1. ハンズオン資料をクローンしよう  
