@@ -13,8 +13,10 @@
     リポジトリを作り`javajo-hands-on`をGitで管理出来るようにする  
 
 1. .gitディレクトリが出来ているのを確認しよう  
-    1. `ls -la`  
+    * `ls -la`  
     `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
+    * Windows: `start .` / Mac: `open .git`  
+    エクスプローラ/Finderで表示も可能だよ！  
 
 1. ファイルを作ってステージに追加しよう  
     1. `vi self-introduction.txt`  
