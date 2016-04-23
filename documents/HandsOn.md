@@ -10,8 +10,14 @@
 1. メールアドレスを設定しよう  
     1. `git config --global user.email "adoresu@adoresu.com"`  
 
-1. gitkのエンコーディングを設定しよう
-    1. `git config --global gui.encoding utf8`
+1. gitk(GUIツール)のエンコーディングを設定しよう
+    1. `git config --global gui.encoding utf8`  
+ 
+1. 設定を確認しよう  
+    1. `git config --list`  
+
+**gitkを立ち上げよう。**  
+    1. `gitk &`  
 
 **リポジトリをクローンしよう。**  
 
