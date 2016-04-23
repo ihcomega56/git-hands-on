@@ -38,3 +38,11 @@
 1. ログを確認しよう  
     1. `git log`  
     ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)  
+
+**reflogを活用しよう。**  
+
+1. reflogを表示しよう    
+    1. `git reflog`  
+
+1. reflogから過去の状態に戻そう  
+    1. `git reset --hard xxx(戻したい対象のコミット)`  
