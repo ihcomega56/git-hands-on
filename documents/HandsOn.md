@@ -2,6 +2,14 @@
 
 ## ひとりでもくもくやってみよう編  
 
+**必要な初期設定をしよう。**  
+
+1. ユーザ名を設定しよう  
+    1. `git config --global user.name "namae"`  
+
+1. メールアドレスを設定しよう  
+    1. `git config --global user.email "adoresu@adoresu.com"`  
+
 **リポジトリをクローンしよう。**  
 
 1. ハンズオン資料をクローンしよう  
