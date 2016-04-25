@@ -161,7 +161,10 @@
 
 1. コンフリクトを発生させよう  
     1. `vi self-introduction.txt`  
+    `first-branch`ブランチで作業する  
     `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git commit -am "XXXを追記しました"`
+    コミットする
     1. `git checkout master`  
     `master`ブランチに切り替える  
     1. `vi self-introduction.txt`  
