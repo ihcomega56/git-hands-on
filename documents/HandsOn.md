@@ -234,7 +234,7 @@
     * `vi e.txt` : `エンジニアというおれの天職`
     * `vi o.txt` : `覚えられない正規表現`
 1. コミットしていく
-    * `git add a.txt` -> `git commit -m "「あ」をコミットしました`
+    * `git add a.txt` -> `git commit -m "「あ」をコミットしました"`
     * `git add --all` -> `git commit -m "「い」「う」をコミットしました"`
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
     * `git checkout master` -> `git pull origin master` または `git fetch` + `git merge origin/master`
