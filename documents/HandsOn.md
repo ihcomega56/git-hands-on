@@ -195,7 +195,7 @@
     <img src="../images/revert.png" width="400">  
     リバートコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
     <img src="../images/revert-vim.png" width="500">  
-    引数で渡したコミットと、それ以降のコミットが打ち消されるよ！  
+    引数で渡したコミットが打ち消されるよ！  
     <img src="../images/revert-done.png" width="500">  
 
 1. ログを確認しよう  
