@@ -192,11 +192,11 @@
     変更をすべてステージしてコミットする   
     1. `git log -1`  
     1. `git revert xxx(打ち消す対象のコミット)`  
-    ![revert](../images/revert.png)  
+    <img src="../images/revert.png" width="400">  
     リバートコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
-    ![revert-vim](../images/revert-vim.png)  
+    <img src="../images/revert-vim.png" width="500">  
     引数で渡したコミットと、それ以降のコミットが打ち消されるよ！  
-    ![revert-done](../images/revert-done.png)  
+    <img src="../images/revert-done.png" width="500">  
 
 1. ログを確認しよう  
     1. `git log`  
@@ -208,9 +208,9 @@
 1. 直前のコミットを打ち消そう(完全に抹消する)  
     1. `git log -3`
     1. `git reset --hard xxx(戻したい対象のコミット)`  
-    ![reset](../images/reset.png)  
+    <img src="../images/reset.png" width="400">  
     引数で渡したコミットより後のコミットが全て打ち消されるよ！  
-    ![reset-done](../images/reset-done.png)  
+    <img src="../images/reset-done.png" width="500">  
     
 1. ログを確認しよう  
     1. `git log`
