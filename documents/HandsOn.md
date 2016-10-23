@@ -244,6 +244,6 @@
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
     * `git checkout master` -> `git pull origin master` または `git fetch` + `git merge origin/master`
     * [入っていた場合] `git checkout a-gyo` -> `git merge master`
-1. 行ブランチを`master`にマージし、プッシュする
-    * `git checkout master` -> `git merge a-gyo --no-ff` -> `git push origin master`
+1. 行ブランチをプッシュする
+1. 担当者がmasterにマージする
 1. 全員が終わったら自由に作業する(他の人の作品を編集してみたり、同じファイルをいじってコンフリクトを起こしてみたり…)
