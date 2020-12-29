@@ -89,7 +89,7 @@
     `master`と`first-branch`があるが、今は`master`ブランチにいることを確認する  
 
 1. ブランチを切り替えよう  
-    1. `git checkout first-branch`  
+    1. `git checkout first-branch` / `git switch first-branch`  
     作業する場所を`master`ブランチから`first-branch`ブランチに切り替える  
     1. `git branch`  
     現在のブランチが`first-branch`になっていることを確認する  
@@ -111,7 +111,7 @@
     差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)  
 
 1. first-branchブランチをnon-fast-forwardでmasterブランチにマージしよう  
-    1. `git checkout master`  
+    1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
     1. `git merge first-branch --no-ff`  
     `--no-ff`オプションをつけてマージする  
@@ -121,13 +121,14 @@
     1. `git log`  
 
 1. fast-forwardだとマージコミットが出来ないのを確認しよう  
-    1. `git checkout -b second-branch`  
-    `-b`オプションをつけてチェックアウトすることで`second-branch`を作成すると同時に切り替えられるよ！  
+    1. `git checkout -b second-branch` / `git switch -c second-branch`  
+    - `-b`オプションをつけてチェックアウトすることで`second-branch`を作成すると同時に切り替えられるよ！  
+    - `-c`オプションをつけてスイッチすることで`second-branch`を作成すると同時に切り替えられるよ！  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
     変更をすべてステージしてコミットする  
-    1. `git checkout master`  
+    1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
     1. `git merge second-branch --ff`  
     `--ff`オプションをつけてマージする  
@@ -138,7 +139,7 @@
 **リベースしてみよう。**  
 
 1. リベースで`master`ブランチの変更を`first-branch`ブランチに取り込もう  
-    1. `git checkout first-branch`  
+    1. `git checkout first-branch` / `git switch first-branch`  
     `first-branch`ブランチに切り替える  
     1. `git rebase master`  
     `master`ブランチの変更をリベースにより取り込む  
@@ -165,7 +166,7 @@
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`
     コミットする
-    1. `git checkout master`  
+    1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`に自己紹介を付け足して保存する  
@@ -230,8 +231,8 @@
     * Bさんは「か行」担当
     * Cさんは「や行」と「わ行」担当
 1. 各メンバー、行ごとのブランチを作る  
-    * `git checkout -b a-gyo`
-    * `git checkout -b ka-gyo`
+    * `git checkout -b a-gyo` / `git switch -c a-gyo` 
+    * `git checkout -b ka-gyo` / `git switch -c ka-gyo`
 1. 各ブランチで5文字分ファイルを作り、好きにネタを書く(内容は重要でないので何でもOK)
     * `vi a.txt` : `曖昧な理解が生んだバグ祭り`
     * `vi i.txt` : `いつも楽しいJava女子部勉強会`
@@ -242,8 +243,8 @@
     * `git add a.txt` -> `git commit -m "「あ」をコミットしました"`
     * `git add --all` -> `git commit -m "「い」「う」をコミットしました"`
 1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
-    * `git checkout master` -> `git pull origin master` または `git fetch` + `git merge origin/master`
-    * [入っていた場合] `git checkout a-gyo` -> `git merge master`
+    * `git checkout master` / `git switch master` -> `git pull origin master` または `git fetch` + `git merge origin/master`
+    * [入っていた場合] `git checkout a-gyo` / `git switch a-gyo` -> `git merge master`
 1. 行ブランチをプッシュする
 1. 担当者がmasterにマージする
 1. 全員が終わったら自由に作業する(他の人の作品を編集してみたり、同じファイルをいじってコンフリクトを起こしてみたり…)
