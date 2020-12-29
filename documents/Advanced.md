@@ -21,7 +21,7 @@
     ステージされている変更と、されていない変更が表示されているはず！  
 
 1. ファイルの編集を破棄しよう  
-    1. `git checkout -- self-introduction.txt`  
+    1. `git checkout -- self-introduction.txt` / `git restore self-instroduction.txt`  
     ステージされていない編集を破棄する  
     よく見ると操作方法が説明されているよ！  
     1. `vi self-introduction.txt`  
