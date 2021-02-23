@@ -13,6 +13,17 @@
 1. 設定を確認しよう  
     1. `git config --list`  
 
+**ターミナルを使う準備をしよう**  
+※ターミナルでの作業に慣れている方は任意のディレクトリを使ってね  
+
+1. ターミナルを起動しよう
+
+1. ユーザーのホームディレクトリに移動しよう
+    1. `cd ~`  
+    ホームディレクトリに移動する
+    1. `pwd`  
+    今いる(使っている)ディレクトリを確認する  
+
 **リポジトリをクローンしよう。**  
 
 1. ハンズオン資料をクローンしよう  
@@ -22,22 +33,23 @@
 **リポジトリを作って、コミット・プッシュしよう。**  
 
 1. ローカルリポジトリを作ろう  
-    1. `mkdir javajo-hands-on`  
-    `javajo-hands-on`というディレクトリを作る  
-    1. `cd javajo-hands-on`  
-    作った`javajo-hands-on`に移動する  
+    1. `mkdir git-practice`  
+    `git-practice`というディレクトリを作る  
+    1. `cd git-practice`  
+    作った`git-practice`に移動する  
     1. `git init`  
-    リポジトリを作り`javajo-hands-on`をGitで管理出来るようにする  
+    リポジトリを作り`git-practice`をGitで管理出来るようにする  
 
 1. .gitディレクトリが出来ているのを確認しよう  
     1. `ls -la`  
     `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
     1. Windows: `start .` / Mac: `open .git`  
-    エクスプローラ/Finderで表示も可能だよ！  
+    エクスプローラ/Finderで表示も可能！ターミナルに不慣れな場合、このウィンドウを開いておくと便利だよ  
 
 1. ファイルを作ってステージに追加しよう  
     1. `vi self-introduction.txt`  
     `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
+    ※`vi`を使わずお好みのテキストエディタを使ってOK！さっき開いたエクスプローラ/Finderのウィンドウを使ってファイルを追加してね(これ以降、`vi`コマンドが出てきたらテキストエディタでの編集を意味していると考えてね)
     1. `git status`  
     ステージの状況を確認する  
     1. `git add self-introduction.txt`  
@@ -59,10 +71,10 @@
     ![github-top](../images/github-top.png)  
     右上のメニューから`New repository`を選択してね  
     ![create-new-repository](../images/create-new-repository.png)  
-    `Repository name`にリポジトリ名をいれてね (今回は`javajo-hands-on`)  
+    `Repository name`にリポジトリ名をいれてね (今回は`git-practice`)  
 
 1. 作成したリモートリポジトリをローカルで追加しよう  
-    1. `git remote add origin https://github.com/XXXXXX/javajo-hands-on.git`  
+    1. `git remote add origin https://github.com/XXXXXX/git-practice.git`  
     ![https](../images/https.png)  
     コマンドをここでコピーできるよ  
 
