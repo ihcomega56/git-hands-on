@@ -150,8 +150,7 @@
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`
     コミットする
-    1. `git merge first-branch --no-ff`  
-    `--no-ff`オプションをつけてマージする  
+    1. `git merge first-branch`  
     CONFLICTの文字が現れるはず・・・！  
 
 1. コンフリクトを解消しよう  
