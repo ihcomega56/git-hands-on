@@ -116,39 +116,11 @@
     リモートの`master`ブランチと比較する  
     差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)  
 
-1. first-branchブランチをnon-fast-forwardでmasterブランチにマージしよう  
+1. first-branchブランチをmasterブランチにマージしよう  
     1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
-    1. `git merge first-branch --no-ff`  
-    `--no-ff`オプションをつけてマージする  
-    viエディタが立ち上がってマージコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
-
-1. ログを確認しよう  
-    1. `git log`  
-
-1. fast-forwardだとマージコミットが出来ないのを確認しよう  
-    1. `git checkout -b second-branch` / `git switch -c second-branch`  
-    - `-b`オプションをつけてチェックアウトすることで`second-branch`を作成すると同時に切り替えられるよ！  
-    - `-c`オプションをつけてスイッチすることで`second-branch`を作成すると同時に切り替えられるよ！  
-    1. `vi self-introduction.txt`  
-    `self-introduction.txt`に自己紹介を付け足して保存する  
-    1. `git commit -am "XXXを追記しました"`  
-    変更をすべてステージしてコミットする  
-    1. `git checkout master` / `git switch master`  
-    `master`ブランチに切り替える  
-    1. `git merge second-branch --ff`  
-    `--ff`オプションをつけてマージする  
-
-1. ログを確認しよう  
-    1. `git log`  
-    
-**リベースしてみよう。**  
-
-1. リベースで`master`ブランチの変更を`first-branch`ブランチに取り込もう  
-    1. `git checkout first-branch` / `git switch first-branch`  
-    `first-branch`ブランチに切り替える  
-    1. `git rebase master`  
-    `master`ブランチの変更をリベースにより取り込む  
+    1. `git merge first-branch`  
+    viエディタが立ち上がってマージコミットのコメントを編集できる(マージの際はたいてい編集せずデフォルトのままでOK)  
 
 1. ログを確認しよう  
     1. `git log`  
@@ -189,67 +161,3 @@
     納得行く内容になったらステージする  
     1. `git commit -m "コンフリクトを解消しました"`  
     コミットする  
-
-**コミットを打ち消そう。**  
-
-1. 直前のコミットを打ち消そう(打ち消しの記録を残す)  
-    1. `vi self-introduction.txt`  
-    `self-introduction.txt`に間違った自己紹介を付け足して保存する  
-    1. `git commit -am "XXXを追記しました"`  
-    変更をすべてステージしてコミットする   
-    1. `git log -1`  
-    1. `git revert xxx(打ち消す対象のコミット)`  
-    <img src="../images/revert.png" width="400">  
-    リバートコミットのコメントを編集できる(たいてい編集せずデフォルトのままでOK)  
-    <img src="../images/revert-vim.png" width="500">  
-    引数で渡したコミットが打ち消されるよ！  
-    <img src="../images/revert-done.png" width="500">  
-
-1. ログを確認しよう  
-    1. `git log`  
-
-1. 直前のコミットとの差分を確認しよう  
-    1. `git diff @~`  
-
-1. 直前のコミットを打ち消そう(完全に抹消する)  
-    1. `git log -3`
-    1. `git reset --hard xxx(戻したい対象のコミット)`  
-    <img src="../images/reset.png" width="400">  
-    引数で渡したコミットより後のコミットが全て打ち消されるよ！  
-    <img src="../images/reset-done.png" width="500">  
-    
-1. ログを確認しよう  
-    1. `git log`
-
----
-
-## みんなでわいわいやってみよう編  
-
-**かるた風に`あ`から`わ`まで皆のエピソードや思いなど(技術に関するもの)を集めてみよう**  
-サンプルはこちら : [karuta-fu](https://github.com/javajok/karuta-fu)  
-
-### ルール ※箇条書きは例
-
-1. 最大9人のチームを作る
-1. チーム毎に1人1行の担当決めをする
-    * Aさんは「あ行」担当
-    * Bさんは「か行」担当
-    * Cさんは「や行」と「わ行」担当
-1. 各メンバー、行ごとのブランチを作る  
-    * `git checkout -b a-gyo` / `git switch -c a-gyo` 
-    * `git checkout -b ka-gyo` / `git switch -c ka-gyo`
-1. 各ブランチで5文字分ファイルを作り、好きにネタを書く(内容は重要でないので何でもOK)
-    * `vi a.txt` : `曖昧な理解が生んだバグ祭り`
-    * `vi i.txt` : `いつも楽しいJava女子部勉強会`
-    * `vi u.txt` : `胡散臭いセミナーに要注意`
-    * `vi e.txt` : `エンジニアというおれの天職`
-    * `vi o.txt` : `覚えられない正規表現`
-1. コミットしていく
-    * `git add a.txt` -> `git commit -m "「あ」をコミットしました"`
-    * `git add --all` -> `git commit -m "「い」「う」をコミットしました"`
-1. 5文字揃ったら`master`ブランチに変更が入っていないか確認し、あった場合とりこむ
-    * `git checkout master` / `git switch master` -> `git pull origin master` または `git fetch` + `git merge origin/master`
-    * [入っていた場合] `git checkout a-gyo` / `git switch a-gyo` -> `git merge master`
-1. 行ブランチをプッシュする
-1. 担当者がmasterにマージする
-1. 全員が終わったら自由に作業する(他の人の作品を編集してみたり、同じファイルをいじってコンフリクトを起こしてみたり…)
