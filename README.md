@@ -16,5 +16,5 @@ Gitの基本をおさえるためのハンズオンです。
 
 * [HandsOn](https://github.com/ihcomega56/git-handson/blob/master/documents/HandsOn.md): 元となる資料です。
 * [Advanced](https://github.com/ihcomega56/git-handson/blob/master/documents/Advanced.md): 応用編、時間が余ったらやってみてください。
-* [GitLog](https://github.com/ihcomega56/git-handson/blob/master/documents/GitLog.md): `git log`の参考資料です。
-* [GitDiff](https://github.com/ihcomega56/git-handson/blob/master/documents/GitDiff.md): `git diff`の参考資料です。
+* [GitLog](https://github.com/ihcomega56/git-handson/blob/master/documents/GitLog.md): `git log`の参考資料です(未完)。
+* [GitDiff](https://github.com/ihcomega56/git-handson/blob/master/documents/GitDiff.md): `git diff`の参考資料です(未完)。
