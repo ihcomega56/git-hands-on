@@ -81,6 +81,7 @@
 1. リモートリポジトリにプッシュしよう  
     1. `git push -u origin master`  
     GitHubのユーザネーム、パスワードを入力する必要があるよ  
+    `-u`オプションはローカルリポジトリの現在のブランチとリモートリポジトリのブランチを紐付けるような意味を持つよ　　
 
 **新しいブランチで作業し、元のブランチにマージしよう。**  
 
@@ -125,16 +126,9 @@
 1. ログを確認しよう  
     1. `git log`  
 
-**ブランチをプッシュしてみよう。**
-
-1. GitHub上にあるブランチを確認しよう  
-    `master`しかないことを確認する  
-
-1. `first-branch`ブランチをプッシュしよう
-    1. `git push origin first-branch`  
-
-1. GitHub上にあるブランチを確認しよう  
-    `master`と`first-branch`があることを確認する  
+1. masterブランチの変更をプッシュしよう
+    1. `git push origin master`  
+    GitHubでファイルの変更が確認できる
 
 **コンフリクトを解消しよう。**  
 
@@ -160,3 +154,24 @@
     納得行く内容になったらステージする  
     1. `git commit -m "コンフリクトを解消しました"`  
     コミットする  
+    1. `git push origin master`
+    プッシュする
+
+**ブランチをプッシュしてみよう。**
+
+1. first-branchで再度ファイルを編集しよう
+    1. `git checkout first-branch` / `git switch first-branch`
+    `first-branch`ブランチに切り替える
+    1. `vi self-introduction.txt`  
+    `self-introduction.txt`に自己紹介を付け足して保存する  
+    1. `git commit -am "XXXを追記しました"`  
+    コミットする
+
+1. GitHub上にあるブランチを確認しよう  
+    `master`しかないことを確認する  
+
+1. `first-branch`ブランチをプッシュしよう
+    1. `git push origin first-branch`  
+
+1. GitHub上にあるブランチを確認しよう  
+    `master`と`first-branch`があることを確認する  
