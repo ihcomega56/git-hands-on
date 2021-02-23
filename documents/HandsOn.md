@@ -9,15 +9,9 @@
 
 1. メールアドレスを設定しよう  
     1. `git config --global user.email "adoresu@adoresu.com"`  
-
-1. gitk(GUIツール)のエンコーディングを設定しよう
-    1. `git config --global gui.encoding utf8`  
  
 1. 設定を確認しよう  
     1. `git config --list`  
-
-**gitkを立ち上げよう。**  
-    1. `gitk &`  
 
 **リポジトリをクローンしよう。**  
 
@@ -57,7 +51,7 @@
     1. `git status`  
     ステージの状況を確認する  
 
-1. ログを確認しよう(gitkも確認しよう)  
+1. ログを確認しよう
     1. `git log`  
     ログの表示はいろいろな方法があるよ！:[参考](GitLog.md)  
 
@@ -204,7 +198,6 @@
 
 1. 直前のコミットとの差分を確認しよう  
     1. `git diff @~`  
-    1. gitkをリロード  
 
 1. 直前のコミットを打ち消そう(完全に抹消する)  
     1. `git log -3`
