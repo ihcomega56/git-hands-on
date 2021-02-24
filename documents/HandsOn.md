@@ -38,7 +38,7 @@
     1. `ls -la`  
     `-a`オプションで隠しファイル/ディレクトリも表示されるよ！  
     1. Windows: `start .` / Mac: `open .git`  
-    エクスプローラ/Finderで表示も可能！ターミナルに不慣れな場合、このウィンドウを開いておくと便利だよ  
+    エクスプローラ/Finderで表示も可能！ターミナルに不慣れな場合、このウィンドウ(Macの場合 `open .`したウィンドウ)を開いておくと便利だよ  
 
 1. ファイルを作ってステージに追加しよう  
     1. `vi self-introduction.txt`  
@@ -103,13 +103,6 @@
 
 1. ログを確認しよう  
     1. `git log`  
-
-1. masterブランチとの差分を確認しよう  
-    1. `git diff master`  
-    ローカルの`master`ブランチと比較する  
-    1. `git diff origin/master`  
-    リモートの`master`ブランチと比較する  
-    差分の表示はいろいろな方法があるよ！:[参考](GitDiff.md)  
 
 1. first-branchブランチをmasterブランチにマージしよう  
     1. `git checkout master` / `git switch master`  
