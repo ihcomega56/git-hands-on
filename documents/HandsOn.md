@@ -146,9 +146,9 @@
 
 **ブランチをプッシュしてみよう。**
 
-1. first-branchで再度ファイルを編集しよう
-    1. `git checkout first-branch` / `git switch first-branch`
-    `first-branch`ブランチに切り替える
+1. second-branchを作成して再度ファイルを編集しよう
+    1. `git checkout -b second-branch` / `git switch -c second-branch`
+    `second-branch`ブランチを作成して切り替える
     1. `vi self-introduction.txt`  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
@@ -157,8 +157,8 @@
 1. GitHub上にあるブランチを確認しよう  
     `master`しかないことを確認する  
 
-1. `first-branch`ブランチをプッシュしよう
-    1. `git push origin first-branch`  
+1. `second-branch`ブランチをプッシュしよう
+    1. `git push origin second-branch`  
 
 1. GitHub上にあるブランチを確認しよう  
-    `master`と`first-branch`があることを確認する  
+    `master`と`second-branch`があることを確認する  
