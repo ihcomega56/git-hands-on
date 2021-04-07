@@ -41,9 +41,10 @@
     エクスプローラ/Finderで表示も可能！ターミナルに不慣れな場合、このウィンドウ(Macの場合 `open .`したウィンドウ)を開いておくと便利だよ  
 
 1. ファイルを作ってステージに追加しよう  
-    1. `vi self-introduction.txt`  
-    `self-introduction.txt`ファイルを作り、自分の名前を書いて保存する  
-    ※`vi`を使わずお好みのテキストエディタを使ってOK！さっき開いたエクスプローラ/Finderのウィンドウを使ってファイルを追加してね(これ以降、`vi`コマンドが出てきたらテキストエディタでの編集を意味していると考えてね)
+    1. `touch self-introduction.txt`  
+    `self-introduction.txt`ファイルを作る
+    1. self-introduction.txtを編集  
+    ファイルの1行目に自己紹介を書く(個人情報は書かないでね)。お好みのテキストエディタを使ってOK！
     1. `git status`  
     ステージの状況を確認する  
     1. `git add self-introduction.txt`  
@@ -96,7 +97,7 @@
     現在のブランチが`first-branch`になっていることを確認する  
 
 1. first-branchブランチでファイルを編集してコミットしよう  
-    1. `vi self-introduction.txt`  
+    1. self-introduction.txtを編集  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
     `-a`オプションを追加することで変更をすべてステージしてコミットできるよ！  
@@ -104,11 +105,14 @@
 1. ログを確認しよう  
     1. `git log`  
 
+1. 差分を確認しよう
+    1. `git diff`  
+    ログの表示はいろいろな方法があるよ！:[参考](GitDiff.md) 
+
 1. first-branchブランチをmasterブランチにマージしよう  
     1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
-    1. `git merge first-branch`  
-    viエディタが立ち上がってマージコミットのコメントを編集できる(マージの際はたいてい編集せずデフォルトのままでOK)  
+    1. `git merge first-branch`   
 
 1. ログを確認しよう  
     1. `git log`  
@@ -120,14 +124,14 @@
 **コンフリクトを解消しよう。**  
 
 1. コンフリクトを発生させよう  
-    1. `vi self-introduction.txt`  
+    1. self-introduction.txtを編集  
     `first-branch`ブランチで作業する  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`
     コミットする
     1. `git checkout master` / `git switch master`  
     `master`ブランチに切り替える  
-    1. `vi self-introduction.txt`  
+    1. self-introduction.txtを編集  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`
     コミットする
@@ -135,7 +139,7 @@
     CONFLICTの文字が現れるはず・・・！  
 
 1. コンフリクトを解消しよう  
-    1. `vi self-introduction.txt`  
+    1. self-introduction.txtを編集  
     残す内容、消す内容を判断して編集し、🐟の骨(`<<<<<<<`と`=======`と`>>>>>>>`)をなくす  
     1. `git add self-introduction.txt`  
     納得行く内容になったらステージする  
@@ -149,7 +153,7 @@
 1. second-branchを作成して再度ファイルを編集しよう
     1. `git checkout -b second-branch` / `git switch -c second-branch`
     `second-branch`ブランチを作成して切り替える
-    1. `vi self-introduction.txt`  
+    1. self-introduction.txtを編集  
     `self-introduction.txt`に自己紹介を付け足して保存する  
     1. `git commit -am "XXXを追記しました"`  
     コミットする
